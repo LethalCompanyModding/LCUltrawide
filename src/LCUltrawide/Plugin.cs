@@ -77,6 +77,8 @@ public class Plugin : BaseUnityPlugin
 
         //Change terminal camera render texture resolution
         GameObject terminalObject = GameObject.Find("TerminalScript");
+
+        //skipcq: CS-R1136
         if (terminalObject != null && terminalObject.TryGetComponent(out Terminal terminal))
         {
             RenderTexture terminalTexHighRes = terminal.playerScreenTexHighRes;
@@ -97,6 +99,8 @@ public class Plugin : BaseUnityPlugin
 
         //Correct aspect ratio for camera view
         GameObject panelObject = GameObject.Find("Systems/UI/Canvas/Panel");
+
+        //skipcq: CS-R1136
         if (panelObject != null && panelObject.TryGetComponent(out AspectRatioFitter arf))
         {
             arf.aspectRatio = newAspect;
@@ -104,6 +108,8 @@ public class Plugin : BaseUnityPlugin
 
         //Change UI scale
         GameObject canvasObject = GameObject.Find("Systems/UI/Canvas");
+
+        //skipcq: CS-R1136
         if (canvasObject != null && canvasObject.TryGetComponent(out CanvasScaler canvasScaler))
         {
             float refHeight = 500 / configUIScale.Value;
@@ -113,6 +119,8 @@ public class Plugin : BaseUnityPlugin
 
         //Change HUD aspect ratio
         GameObject hudObject = hudManager.HUDContainer;
+
+        //skipcq: CS-R1136
         if (hudObject != null && hudObject.TryGetComponent(out AspectRatioFitter arf2))
         {
             arf2.aspectRatio = configUIAspect.Value > 0 ? configUIAspect.Value : newAspect;
@@ -120,6 +128,8 @@ public class Plugin : BaseUnityPlugin
 
         //Fix stretched HUD elements
         GameObject uiCameraObject = GameObject.Find("Systems/UI/UICamera");
+
+        //skipcq: CS-R1136
         if (uiCameraObject != null && uiCameraObject.TryGetComponent(out Camera uiCamera))
         {
             uiCamera.fieldOfView = Math.Min(106 / (configUIAspect.Value > 0 ? configUIAspect.Value : newAspect), 60);
@@ -127,6 +137,8 @@ public class Plugin : BaseUnityPlugin
 
         //Fix Inventory position
         GameObject inventoryObject = hudManager.Inventory.canvasGroup.gameObject;
+
+        //skipcq: CS-R1136
         if (inventoryObject != null && inventoryObject.TryGetComponent(out RectTransform rectTransform))
         {
             rectTransform.anchoredPosition = Vector2.zero;
@@ -137,6 +149,8 @@ public class Plugin : BaseUnityPlugin
 
         //Scale up width of helmet model
         GameObject helmetModel = GameObject.Find("PlayerHUDHelmetModel");
+
+        //skipcq: CS-R1136
         if (helmetModel != null && helmetModel.TryGetComponent<Transform>(out Transform transform))
         {
             Vector3 helmetScale = transform.localScale;
