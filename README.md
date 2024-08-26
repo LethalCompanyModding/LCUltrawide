@@ -27,15 +27,18 @@ Optionally you can change the resolution and UI scale and aspect ratio in the mo
 ## Update Notes
 
 ### 1.1.2
+
 - Forked due to abandonment from the original mod author
 
 ### 1.1.1
+
 - Fixed UI elements being too far from screen edge by default
 - Fixed aspect ratio not applying correctly when rejoining games
 - Fixed aspect ratio sometimes updating even if window size has not changed
 - Made helmet slightly less intrusive on wider monitors
 
 ### 1.1.0
+
 - Auto detect aspect ratio and adjust to window size changes in real time
 - Improved UI scaling consistency across different aspect ratios
 - Helmet visor model is now scaled with aspect ratio
@@ -44,5 +47,6 @@ Optionally you can change the resolution and UI scale and aspect ratio in the mo
 - Numerous other internal changes to support automatic aspect ratio adjustment
 
 ### 1.0.0
+
 - Support for setting a custom resolution and aspect ratio in config file
 - Support for changing UI scale and aspect ratio
