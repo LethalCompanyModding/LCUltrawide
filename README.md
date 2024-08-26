@@ -26,6 +26,9 @@ Optionally you can change the resolution and UI scale and aspect ratio in the mo
 
 ## Update Notes
 
+### 1.1.2
+- Forked due to abandonment from the original mod author
+
 ### 1.1.1
 - Fixed UI elements being too far from screen edge by default
 - Fixed aspect ratio not applying correctly when rejoining games
