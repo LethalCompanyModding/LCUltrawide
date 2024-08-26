@@ -15,7 +15,7 @@ This mod makes some changes to the games rendering and UI to enable support for 
 ## Installation
 
 1. Make sure you have [BepInEx](https://thunderstore.io/c/lethal-company/p/BepInEx/BepInExPack/) installed for the game
-2. Download the latest version of the mod from [Thunderstore](https://thunderstore.io/c/lethal-company/p/stefan750/LCUltrawide/) or [GitHub releases](https://github.com/stefan750/LCUltrawide/releases/latest)
+2. Download the latest version of the mod from [Thunderstore](https://thunderstore.io/c/lethal-company/p/stefan750/LCUltrawide/) or [GitHub releases](https://github.com/LethalCompanyModding/LCUltrawide/releases/latest)
 3. Navigate to the games install folder (you can right click the game in your Steam library, select "Manage" and then "Browse Local Files" to easily find it)
 4. Copy the BepInEx folder from the downloaded .zip into your game folder making sure the contents end up in the already existing folders
 
