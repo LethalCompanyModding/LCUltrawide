@@ -3,6 +3,14 @@
 Lethal Company is locked to 16:9 aspect ratio by default and will add black bars on the sides of ultrawide monitors.  
 This mod makes some changes to the games rendering and UI to enable support for any custom resolution and aspect ratio.
 
+## Maintainers
+
+**Original Author**: [Stefan750](https://github.com/stefan750/LCUltrawide)
+
+**Current Maintainer(s)**: Robyn, [Lunxara](https://github.com/Lunxara)
+
+This mod has been adopted by the [Lethal Company Modding community repo](https://github.com/LethalCompanyModding/LCUltrawide) and may be maintained by any willing community member with a github account.
+
 ## Features
 
 - Automatically detects monitor aspect ratio and scales the game to fill the entire screen (works even in window mode!)
