@@ -23,7 +23,7 @@ public class Plugin : BaseUnityPlugin
 #pragma warning restore CS8618
 
     //How often the screen size will be checked in seconds
-    private static readonly float aspectUpdateTime = 1.0f;
+    private const float aspectUpdateTime = 1.0f;
 
     private static bool aspectAutoDetect = false;
 
@@ -32,7 +32,7 @@ public class Plugin : BaseUnityPlugin
     private static float prevTime = 0f;
 
     //Default Helmet width
-    private static readonly float fDefaultHelmetWidth = 0.3628f;
+    private const float fDefaultHelmetWidth = 0.3628f;
 
     private void Awake()
     {
@@ -77,15 +77,13 @@ public class Plugin : BaseUnityPlugin
 
         //Change terminal camera render texture resolution
         GameObject terminalObject = GameObject.Find("TerminalScript");
-        if (terminalObject != null)
+        if (terminalObject != null && terminalObject.TryGetComponent(out Terminal terminal))
         {
-            if (terminalObject.TryGetComponent(out Terminal terminal))
-            {
-                RenderTexture terminalTexHighRes = terminal.playerScreenTexHighRes;
-                terminalTexHighRes.Release();
-                terminalTexHighRes.height = configResH.Value > 0 ? configResH.Value : terminalTexHighRes.height;
-                terminalTexHighRes.width = configResW.Value > 0 ? configResW.Value : Convert.ToInt32(terminalTexHighRes.height * newAspect);
-            }
+            RenderTexture terminalTexHighRes = terminal.playerScreenTexHighRes;
+            terminalTexHighRes.Release();
+            terminalTexHighRes.height = configResH.Value > 0 ? configResH.Value : terminalTexHighRes.height;
+            terminalTexHighRes.width = configResW.Value > 0 ? configResW.Value : Convert.ToInt32(terminalTexHighRes.height * newAspect);
+
         }
 
         Camera? camera = GameNetworkManager.Instance?.localPlayerController?.gameplayCamera;
