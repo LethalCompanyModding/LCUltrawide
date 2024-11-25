@@ -91,9 +91,7 @@ public class Plugin : BaseUnityPlugin
         Camera? camera = GameNetworkManager.Instance?.localPlayerController?.gameplayCamera;
 
         if (camera is null)
-        {
-            Log.LogError("Camera is null, unable to reset aspect");
-        }
+            Log.LogWarning("Unable to acquire Game Camera, not resetting aspect ratio");
 
         camera?.ResetAspect();
 
