@@ -43,4 +43,4 @@
 
   #There is a list of tags in the tutorial
   [publish.categories]
-    lethal-company=["mods"]
+    lethal-company=["clientside", "mods"]
