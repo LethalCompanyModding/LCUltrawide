@@ -50,6 +50,9 @@ public class Plugin : BaseUnityPlugin
 
         Log = Logger;
 
+        if (configResW.Value > 0)
+            Log.LogInfo("Notice: You have set configResW to a non-zero value. This config option is deprecated because it causes black bars on the screen. It will be ignored, please report issues to https://github.com/LethalCompanyModding/LCUltrawide/issues");
+
         Harmony.CreateAndPatchAll(typeof(Plugin));
     }
 
