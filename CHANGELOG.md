@@ -1,5 +1,11 @@
 # LCUltrawide Changelog
 
+## v1.2.0
+
+- Deprecated the width config option
+- Output a message when ignoring a client's width option
+- Updated to the latest game assembly
+
 ## v1.1.3
 
 - Added client side tag to thunderstore package
