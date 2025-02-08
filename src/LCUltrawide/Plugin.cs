@@ -1,4 +1,4 @@
-﻿using BepInEx;
+using BepInEx;
 using HarmonyLib;
 using GameNetcodeStuff;
 using UnityEngine;
@@ -45,7 +45,8 @@ public class Plugin : BaseUnityPlugin
         configUIScale = Config.Bind("UI", "Scale", 1f, "Changes the size of UI elements on the screen.");
         configUIAspect = Config.Bind("UI", "AspectRatio", 0f, "Changes the aspect ratio of the in-game HUD, a higher number makes the HUD wider.\n(0 = auto, 1.33 = 4:3, 1.77 = 16:9, 2.33 = 21:9, 3.55 = 32:9)");
 
-        aspectAutoDetect = configResW.Value <= 0;
+        //This should fix Issue #6 Black Bars 
+        aspectAutoDetect = true;
 
         Log = Logger;
 
