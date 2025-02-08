@@ -1,12 +1,12 @@
-using BepInEx;
-using HarmonyLib;
-using GameNetcodeStuff;
-using UnityEngine;
-using BepInEx.Configuration;
-using UnityEngine.UI;
+﻿using System;
 using System.Collections.Generic;
-using System;
+using BepInEx;
+using BepInEx.Configuration;
 using BepInEx.Logging;
+using GameNetcodeStuff;
+using HarmonyLib;
+using UnityEngine;
+using UnityEngine.UI;
 
 namespace LCUltrawide;
 
