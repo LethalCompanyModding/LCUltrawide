@@ -34,6 +34,9 @@ public class Plugin : BaseUnityPlugin
     //Default Helmet width
     private const float fDefaultHelmetWidth = 0.3628f;
 
+    private static int defaultScreenTexHeight = 0;
+    private static int defaultTerminalTexHighResHeight = 0;
+    
     private void Awake()
     {
         // Plugin startup logic
@@ -44,6 +47,14 @@ public class Plugin : BaseUnityPlugin
 
         configUIScale = Config.Bind("UI", "Scale", 1f, "Changes the size of UI elements on the screen.");
         configUIAspect = Config.Bind("UI", "AspectRatio", 0f, "Changes the aspect ratio of the in-game HUD, a higher number makes the HUD wider.\n(0 = auto, 1.33 = 4:3, 1.77 = 16:9, 2.33 = 21:9, 3.55 = 32:9)");
+
+        Config.SettingChanged += (s, e) =>
+        {
+            //Update resolution and UI
+            //This will break if aspectAutoDetect is set to false
+            prevAspect = 0;
+            prevTime = 0;
+        };
 
         //This should fix Issue #6 Black Bars 
         aspectAutoDetect = true;
@@ -75,8 +86,12 @@ public class Plugin : BaseUnityPlugin
             return;
         }
 
+        //This should fix resolution not being set correctly if modified trough LethalConfig
+        if (defaultScreenTexHeight == 0)
+            defaultScreenTexHeight = screenTex.height;
+
         screenTex.Release();
-        screenTex.height = configResH.Value > 0 ? configResH.Value : screenTex.height;
+        screenTex.height = configResH.Value > 0 ? configResH.Value : defaultScreenTexHeight;
         screenTex.width = configResW.Value > 0 ? configResW.Value : Convert.ToInt32(screenTex.height * newAspect);
 
         //Change terminal camera render texture resolution
@@ -86,8 +101,13 @@ public class Plugin : BaseUnityPlugin
         if (terminalObject != null && terminalObject.TryGetComponent(out Terminal terminal))
         {
             RenderTexture terminalTexHighRes = terminal.playerScreenTexHighRes;
+
+            //This should fix resolution not being set correctly if modified trough LethalConfig
+            if (defaultTerminalTexHighResHeight == 0)
+                defaultTerminalTexHighResHeight = terminalTexHighRes.height;
+
             terminalTexHighRes.Release();
-            terminalTexHighRes.height = configResH.Value > 0 ? configResH.Value : terminalTexHighRes.height;
+            terminalTexHighRes.height = configResH.Value > 0 ? configResH.Value : defaultTerminalTexHighResHeight;
             terminalTexHighRes.width = configResW.Value > 0 ? configResW.Value : Convert.ToInt32(terminalTexHighRes.height * newAspect);
 
         }
