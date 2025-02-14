@@ -1,5 +1,9 @@
 # LCUltrawide Changelog
 
+## v1.2.1
+
+- Completely ignore the width config option now rather than just warn
+
 ## v1.2.0
 
 - Deprecated the width config option
