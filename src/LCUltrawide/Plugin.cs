@@ -34,8 +34,10 @@ public class Plugin : BaseUnityPlugin
     //Default Helmet width
     private const float fDefaultHelmetWidth = 0.3628f;
 
-    private static int defaultScreenTexHeight = 0;
-    private static int defaultTerminalTexHighResHeight = 0;
+    //Default Screen Texture Heights
+    //Might require change with game updates
+    private const int defaultScreenTexHeight = 520;
+    private const int defaultTerminalTexHighResHeight = 580;
     
     private void Awake()
     {
@@ -86,10 +88,6 @@ public class Plugin : BaseUnityPlugin
             return;
         }
 
-        //This should fix resolution not being set correctly if modified trough LethalConfig
-        if (defaultScreenTexHeight == 0)
-            defaultScreenTexHeight = screenTex.height;
-
         screenTex.Release();
         screenTex.height = configResH.Value > 0 ? configResH.Value : defaultScreenTexHeight;
         screenTex.width = configResW.Value > 0 ? configResW.Value : Convert.ToInt32(screenTex.height * newAspect);
@@ -101,11 +99,6 @@ public class Plugin : BaseUnityPlugin
         if (terminalObject != null && terminalObject.TryGetComponent(out Terminal terminal))
         {
             RenderTexture terminalTexHighRes = terminal.playerScreenTexHighRes;
-
-            //This should fix resolution not being set correctly if modified trough LethalConfig
-            if (defaultTerminalTexHighResHeight == 0)
-                defaultTerminalTexHighResHeight = terminalTexHighRes.height;
-
             terminalTexHighRes.Release();
             terminalTexHighRes.height = configResH.Value > 0 ? configResH.Value : defaultTerminalTexHighResHeight;
             terminalTexHighRes.width = configResW.Value > 0 ? configResW.Value : Convert.ToInt32(terminalTexHighRes.height * newAspect);
