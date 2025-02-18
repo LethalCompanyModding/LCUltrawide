@@ -7,7 +7,7 @@ This mod makes some changes to the games rendering and UI to enable support for 
 
 **Original Author**: [Stefan750](https://github.com/stefan750/LCUltrawide)
 
-**Current Maintainer(s)**: Robyn, [Lunxara](https://github.com/Lunxara)
+**Current Maintainer(s)**: [Robyn](https://github.com/RobynLlama), [Lunxara](https://github.com/Lunxara), [MasterAli](https://github.com/MasterAli2)
 
 This mod has been adopted by the [Lethal Company Modding community repo](https://github.com/LethalCompanyModding/LCUltrawide) and may be maintained by any willing community member with a github account.
 
@@ -31,3 +31,5 @@ This mod has been adopted by the [Lethal Company Modding community repo](https:/
 
 By default the mod will take the original game resolution and automatically scale it to fit your monitor.  
 Optionally you can change the resolution and UI scale and aspect ratio in the mods config file **BepInEx/config/LCUltrawide.cfg**.
+
+Optionally supports configuration in-game via [Lethal Config](https://thunderstore.io/c/lethal-company/p/AinaVT/LethalConfig/)
