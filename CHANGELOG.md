@@ -1,5 +1,9 @@
 # LCUltrawide Changelog
 
+## v1.2.2
+
+- Adds support for Lethal Config
+
 ## v1.2.1
 
 - Completely ignore the width config option now rather than just warn
