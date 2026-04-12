@@ -1,5 +1,15 @@
 # LCUltrawide Changelog
 
+## v1.3.0 (v81 update)
+- Updated for v81
+	- Ignoring the new Pixelation setting since it has the ability to override this mod's changes.
+- Removed the deprecated width config option as well as the config width option.
+- Added new Resolution Modifier config options to replace the removed config options and in-game Pixelation setting
+- Tidied up references to use less ``GameObject.Find`` in favor of existing cached references and performing transform crawls from them.
+- Added several Debugging log messages.
+- Updated readme to remove previous maintainers. Added myself (darmuh) although I do not plan to be an especially active maintainer.
+- Updated readme with new information regarding configuration options
+
 ## v1.2.2
 
 - Adds support for Lethal Config
