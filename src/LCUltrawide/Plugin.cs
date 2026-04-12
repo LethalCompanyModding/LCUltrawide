@@ -160,7 +160,7 @@ public class Plugin : BaseUnityPlugin
             float refHeight = 500 / ConfigUIScale.Value;
             float refWidth = refHeight * newAspect;
             canvasScaler.referenceResolution = new Vector2(refWidth, refHeight);
-            Log.LogDebug($"Updating UI/Canvas CanvasScaler to preferred height/width");
+            Log.LogDebug("Updating UI/Canvas CanvasScaler to preferred height/width");
         }
 
         //Change HUD aspect ratio
@@ -170,7 +170,7 @@ public class Plugin : BaseUnityPlugin
         if (hudObject != null && hudObject.TryGetComponent(out AspectRatioFitter arf2))
         {
             arf2.aspectRatio = ConfigUIAspect.Value > 0 ? ConfigUIAspect.Value : newAspect;
-            Log.LogDebug($"Updating HUDManager HUDContainer AspectRatioFitter to preferred height/width");
+            Log.LogDebug("Updating HUDManager HUDContainer AspectRatioFitter to preferred height/width");
         }
 
         //Fix stretched HUD elements
@@ -180,7 +180,7 @@ public class Plugin : BaseUnityPlugin
         if (uiCameraObject != null && uiCameraObject.TryGetComponent(out Camera uiCamera))
         {
             uiCamera.fieldOfView = Math.Min(106 / (ConfigUIAspect.Value > 0 ? ConfigUIAspect.Value : newAspect), 60);
-            Log.LogDebug($"Updating Systems/UI/UICamera field of view to fix stretched HUD elements");
+            Log.LogDebug("Updating Systems/UI/UICamera field of view to fix stretched HUD elements");
         }
 
         //Fix Inventory position
@@ -193,7 +193,7 @@ public class Plugin : BaseUnityPlugin
             rectTransform.anchorMax = new Vector2(0.5f, 0f);
             rectTransform.anchorMin = new Vector2(0.5f, 0.5f);
             rectTransform.pivot = new Vector2(0.5f, 0f);
-            Log.LogDebug($"Updating HUDManager Inventory position for preferred resolution");
+            Log.LogDebug("Updating HUDManager Inventory position for preferred resolution");
         }
 
         //Scale up width of helmet model
@@ -206,7 +206,7 @@ public class Plugin : BaseUnityPlugin
             // Helmet width is good up until an aspect ratio of 2.3~
             helmetScale.x = fDefaultHelmetWidth * Math.Max(newAspect / 2.3f, 1);
             helmetTransform.localScale = helmetScale;
-            Log.LogDebug($"Updating PlayerHUDHelmetModel transform scale width for preferred resolution");
+            Log.LogDebug("Updating PlayerHUDHelmetModel transform scale width for preferred resolution");
         }
     }
 
