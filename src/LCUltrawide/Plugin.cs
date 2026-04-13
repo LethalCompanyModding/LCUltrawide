@@ -45,11 +45,12 @@ public class Plugin : BaseUnityPlugin
             1f,
             new ConfigDescription(
             """
-            This multiplier overrides the \"Pixelation\" in-game setting for the gameplay camera
             Use this to up or downscale your game camera rendering resolution.
+            The game's default gameplay camera rendering resolution of 860x520 is multiplied by the value in this configuration item.
             Game default value: 1
+            WARNING: Increasing the multiplier is more costly on your PC's Hardware. Use with caution!
             """,
-            new AcceptableValueRange<float>(0.1f, 1.75f)));
+            new AcceptableValueRange<float>(0.1f, 4f)));
 
         TerminalResMultiplier = Config.Bind(
             "Resolution Override", 
@@ -57,11 +58,12 @@ public class Plugin : BaseUnityPlugin
             1f,
             new ConfigDescription(
             """
-            This multiplier overrides the \"Pixelation\" in-game setting for the terminal
             Use this to up or downscale your terminal rendering resolution.
+            The game's default terminal rendering resolution of 960x580 is multiplied by the value in this configuration item.
             Game default value: 1
+            WARNING: Increasing the multiplier is more costly on your PC's Hardware. Use with caution!
             """,
-            new AcceptableValueRange<float>(0.1f, 1.75f)));
+            new AcceptableValueRange<float>(0.1f, 4f)));
 
         ConfigUIScale = Config.Bind(
             "UI", 
@@ -118,9 +120,6 @@ public class Plugin : BaseUnityPlugin
         screenTex.Release();
         screenTex.height = Convert.ToInt32(defaultScreenTexHeight * GameCamResMultiplier.Value);
         screenTex.width = Convert.ToInt32(screenTex.height * newAspect);
-
-        //Change terminal camera render texture resolution
-        //GameObject terminalObject = GameObject.Find("TerminalScript");
 
         // terminal resolution
         if (hudManager.terminalScript != null)
