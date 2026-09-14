@@ -1,5 +1,17 @@
 # LCUltrawide Changelog
 
+## v1.4.0
+- Removed Resolution Modifier config options. 
+	- Setting these to values larger than 1 did nothing but hamper performance. Any perceived upscaling was in fact placebo.
+- Replaced vanilla in-game pixelation setting with new slider settings for both game pixelation and terminal screen pixelation.
+	- These sliders essentially replace the resolution modifier configs but correctly scale only up to 1.
+	- Using our modded settings, pixelation in-game is now scaled based on your monitor resolution.
+	- The default values for these settings are meant to match vanilla from a 1080p monitor.
+		- If you have a higher or lower resolution monitor these defaults will likely look different than what you see in vanilla.
+	- The settings are saved using the game's save system and are persistent between modded profiles so long as the mod is installed.
+	- Furthermore, these modded settings do not contaminate the existing vanilla pixel resolution setting value in your game settings. Disabling/Enabling the mod will not cause you any issues.
+- The above changes resulted in removing 1 patch and adding 6 to support our modded in-game settings.
+
 ## v1.3.1
 - Raised maximum values for render resolution modifiers and added warning to configuration description.
 	- Note that I (with a 4070ti) would never raise the rendering resolution to a value higher than 1.75.
