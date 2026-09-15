@@ -18,7 +18,7 @@
   #This is where you put in dependencies in the format
   #DependencyNamespace-ModName = "version.number.here"
   [package.dependencies]
-    BepInEx-BepInExPack="5.4.2100"
+    BepInEx-BepInExPack="5.4.2305"
 
 #These settings will import the repo's README.md file and the icon in the
 #same folder as this TOML file as your icon. Please replace the icon with
